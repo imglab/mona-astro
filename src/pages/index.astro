@@ -1,20 +1,12 @@
 ---
-import {Content as TourContent} from '../content/Tour.md';
-import Logo from '../components/Logo.astro';
-import '../styles/global.css';
-import '../styles/home.css';
+import {Content as Landing} from '/src/content/landing.md';
+import '/src/styles/global.css';
 
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let title = 'My Astro Site';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+let title = 'MONA | ';
+title  = title.concat('Accueil')
 ---
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
@@ -56,28 +48,13 @@ let title = 'My Astro Site';
 	<main>
 		<header>
 			<div>
-				<Logo width={60} height={80} />
-				<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+				<h1>Bienvenue à MONA</h1>
 			</div>
 		</header>
 
 		<article>
-			<div class="banner">
-				<p><strong>🧑‍🚀 Seasoned astronaut?</strong> Delete this template and have fun!</p>
-			</div>
-			<TourContent />
+			<Landing />
 		</article>
-
-		<!--
-
-		You can also use imported framework components directly in your markup!
-		
-		Note: by default, these components are NOT interactive on the client.
-		The `client:visible` directive tells Astro to make it interactive.
-		
-		See https://docs.astro.build/core-concepts/component-hydration/ 
-
-		-->
 
 	</main>
 </body>
