@@ -1,10 +1,13 @@
 ---
 import {Content as Landing} from '/src/content/landing.md';
+import {Navbar} from '/src/components/Navbar.astro';
 import '/src/styles/global.css';
 
 
 let title = 'MONA | ';
 title  = title.concat('Accueil')
+
+console.log('test début page index')
 ---
 <html lang="fr">
 <head>
@@ -13,39 +16,16 @@ title  = title.concat('Accueil')
 	<title>{title}</title>
 
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
 
 	<style>
-		header {
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
-			max-width: min(100%, 68ch);
-		}
-		article {
-			padding-top: 2em;
-			line-height: 1.5;
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
-			max-width: 70ch;
-		}
-		.banner {
-			text-align: center;
-			font-size: 1.2rem;
-			background: var(--color-light);
-			padding: 1em 1.5em;
-			padding-left: 0.75em;
-			border-radius: 4px;
-		}
+		
 	</style>
-	<style is:global>
-		pre {
-			padding: 1rem;
-		}
-	</style>
+	
 </head>
 <body>
 	<main>
+		<Navbar client:only/>
 		<header>
 			<div>
 				<h1>Bienvenue à MONA</h1>
@@ -55,7 +35,7 @@ title  = title.concat('Accueil')
 		<article>
 			<Landing />
 		</article>
-
+		
 	</main>
 </body>
 </html>
